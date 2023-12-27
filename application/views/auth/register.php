@@ -59,7 +59,7 @@
       }
   });
   
-  $("#password").on("input", function () {
+  $("#username").on("input", function () {
       var passwordLength = $(this).val().length;
       if (passwordLength < 6) {
           $(this).addClass("is-invalid");
