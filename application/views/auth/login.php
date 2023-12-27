@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title>Login Page</title>
+  <title>Login</title>
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
   <!-- jQuery -->
@@ -54,7 +54,7 @@
 
         $.ajax({
             type: "POST",
-            url: "<?php echo base_url('login'); ?>",
+            url: "<?= 'http://localhost/server_api_jwt/login'; ?>",
             data: userData,
             dataType: "json",
             success: function (response) {
@@ -66,7 +66,7 @@
                     showConfirmButton: false,
                     timer: 1500
                 }).then(function() {
-                    window.location.href = "<?php echo base_url('front/product'); ?>";
+                    window.location.href = "<?php echo base_url('product'); ?>";
                 });
             },
             error: function (error) {
@@ -81,7 +81,7 @@
     }
 
     $("#registerBtn").click(function () {
-        window.location.href = "<?php echo base_url('front/auth/register'); ?>";
+        window.location.href = "<?php echo base_url('auth/register'); ?>";
     })
   });
 

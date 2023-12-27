@@ -63,7 +63,7 @@
     
       $.ajax({
         type: "POST", 
-        url: `<?php echo base_url('product'); ?>`, 
+        url: `http://localhost/server_api_jwt/product`, 
         data: formData,
         dataType: "json",
         success: function (response) {
@@ -75,7 +75,7 @@
                 showConfirmButton: false,
                 timer: 1500
             }).then(function() {
-                window.location.href = "<?php echo base_url('front/product'); ?>";
+                window.location.href = "<?php echo base_url('product'); ?>";
             });
         },
         error: function (error) {
@@ -85,7 +85,7 @@
     });
 
     $("#back").click(function () {
-      window.location.href = `<?php echo base_url('front/product'); ?>`
+      window.location.href = `<?php echo base_url('product'); ?>`
     })
   </script>
 </body>

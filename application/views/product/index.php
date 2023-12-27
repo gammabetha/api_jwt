@@ -34,7 +34,7 @@
         if (jwtToken) {
             getProduct();
         } else {
-            window.location.href = "<?php echo base_url('front/auth/login'); ?>";
+            window.location.href = "<?php echo base_url('auth'); ?>";
         }
     });
 
@@ -58,7 +58,7 @@
     }
 
     function ubah_data(id) {
-        window.location.href = `<?php echo base_url('front/product/ubah'); ?>/${id}`
+        window.location.href = `<?php echo base_url('product/ubah'); ?>/${id}`
     }
 
     function hapus_data(id) {
@@ -70,7 +70,7 @@
 
         $.ajax({
             type: "DELETE",
-            url: `<?php echo base_url('product'); ?>/${id}`,
+            url: `<?='http://localhost/server_api_jwt/product'; ?>/${id}`,
             dataType: "json",
             success: function (response) {
                 console.log("Data deleted successfully:", response);
@@ -81,7 +81,7 @@
                     showConfirmButton: false,
                     timer: 1500
                 }).then(function () {
-                    window.location.href = "<?php echo base_url('front/product'); ?>";
+                    window.location.href = "<?php echo base_url('product'); ?>";
                 });
             },
             error: function (error) {
@@ -99,7 +99,7 @@
         });
         $.ajax({
             type: "GET",
-            url: "<?php echo base_url('product'); ?>",
+            url: "http://localhost/server_api_jwt/product",
             data: {},
             dataType: "json",
             success: function (response) {
@@ -133,7 +133,7 @@
     }
 
     function tambah() {
-        window.location.href = "<?php echo base_url('front/product/tambah'); ?>"
+        window.location.href = "<?php echo base_url('product/tambah'); ?>"
     }
 </script>
 </body>
